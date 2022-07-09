@@ -1,6 +1,4 @@
-## Anomaly-Detection-w-SQL
-
-### Setup PostgreSQL
+### 1 | Setup PostgreSQL
 
 - First we need to setup <code>PostgreSQL</code>
 
@@ -120,6 +118,10 @@ postgres=> \dt
 ```
 
 - Now we can create, read, update and delete data with the user <code>ben</code>
+
+### 2 | Upload CSV data to TABLES
+
+- Having created a non-super user, we can upload data to the <code>database</code>
 
 
 #### Common SQL Commands 
