@@ -157,7 +157,7 @@ cursor.execute(sql)
   
 # Copy Data into Table (SQL query)
 sql2 = '''COPY details(emp_id,first_name,last_name,dob,city)
-FROM '/Users/andrey/Documents/data.txt'
+FROM '/Users/andrey/Documents/data.txt' # absolute path to file
 DELIMITER ','
 CSV HEADER;'''
   
@@ -173,6 +173,24 @@ conn.commit()
 conn.close()    
 
 ```
+
+```
+TABLE details;
+```
+
+```
+ emp_id | first_name | last_name |    dob     |   city   
+--------+------------+-----------+------------+----------
+      1 | Max        | Smith     | 2002-02-03 | Sydney
+      2 | Karl       | Summers   | 2004-04-10 | Brisbane
+      3 | Sam        | Wilde     | 2005-02-06 | Perth
+```
+
+#### TABLE OPERATIONS
+List databases <code>\list</code> & Connect to databse <code>\connect</code>
+- <code>\dt</code> - show tables 
+- <code>TABLE table_name</code> view table stored in database
+- <code>DROP table_name</code> remove table from database 
 
 #### Common SQL Commands 
 
