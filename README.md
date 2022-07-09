@@ -2,9 +2,38 @@
 
 ### Setup PostgreSQL
 
+#### Start Server
+
 ```python
-pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
+pg_ctl -D /usr/local/var/postgres start # start server 
+# pg_ctl -D /usr/local/var/postgres stop  # end server
 ```
+
+- By default, user <code>postgres</code> is created
+
+```
+psql postgres
+```
+
+- Check which users are installed
+
+```
+postgres=# \du
+```
+
+- Create additional users, by default the predefined user(s) are <code>super user accounts</code>
+
+```
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ andrey    | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+```
+
+
+
+#### Common Commands
 
 ```
 SELECT - extracts data from a database
