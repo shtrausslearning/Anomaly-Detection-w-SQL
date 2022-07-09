@@ -126,6 +126,54 @@ postgres=> \dt
 - Having created a non-super user, we can upload data to the <code>database</code>
 
 
+- Utilising <code>psycopg2</code> (via python)
+
+```python
+
+import psycopg2
+
+DATABASE = 'X'    # database [\list] (which we \connect to)
+USER = 'X'        # superused id
+PASSWORD = 'X'    # password
+HOST = 'XXX.X.X.X' # host ip
+PORT = 'XXXX'      # port number  
+  
+conn = psycopg2.connect(database=f'{DATABASE}',
+                        user=f'{USER}', password=f'{PASSWORD}', 
+                        host=f'{HOST}', port=f'{PORT}'
+)
+  
+conn.autocommit = True
+cursor = conn.cursor()
+  
+# Create Table Header (SQL query)
+sql = '''CREATE TABLE DETAILS(emp_id SERIAL,
+first_name   VARCHAR(50),
+last_name VARCHAR(50),
+dob DATE,
+city VARCHAR(40));'''
+
+cursor.execute(sql)
+  
+# Copy Data into Table (SQL query)
+sql2 = '''COPY details(emp_id,first_name,last_name,dob,city)
+FROM '/Users/andrey/Documents/data.txt'
+DELIMITER ','
+CSV HEADER;'''
+  
+cursor.execute(sql2)
+  
+# Fetch the table data (SQL query)
+sql3 = '''select * from details;'''
+cursor.execute(sql3)
+for i in cursor.fetchall():
+    print(i)
+  
+conn.commit()
+conn.close()    
+
+```
+
 #### Common SQL Commands 
 
 ```
