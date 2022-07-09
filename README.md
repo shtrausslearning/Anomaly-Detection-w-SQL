@@ -9,19 +9,12 @@ pg_ctl -D /usr/local/var/postgres start # start server
 # pg_ctl -D /usr/local/var/postgres stop  # end server
 ```
 
-- By default, user <code>postgres</code> is created
-
-```
-psql postgres
-```
-
-- Check which users are installed
+- By default, a superuser is created, check which users are installed
+- Create additional users, by default the predefined user(s) are <code>super user accounts</code>
 
 ```
 postgres=# \du
 ```
-
-- Create additional users, by default the predefined user(s) are <code>super user accounts</code>
 
 ```
                                    List of roles
@@ -66,6 +59,44 @@ postgres=# \du
  ben       | Create DB                                                  | {}
 ```
 
+- Let's connect to the database through user <code>ben</code>
+- # has changed to a > (no longer using a Super User account)
+
+```
+psql postgres -U ben
+```
+
+```
+                                  List of databases
+           Name            | Owner  | Encoding | Collate | Ctype | Access privileges 
+---------------------------+--------+----------+---------+-------+-------------------
+ databasename              | andrey | UTF8     | C       | C     | 
+ postgres                  | andrey | UTF8     | C       | C     | 
+ super_awesome_application | ben    | UTF8     | C       | C     | =Tc/ben          +
+                           |        |          |         |       | ben=CTc/ben
+ template0                 | andrey | UTF8     | C       | C     | =c/andrey        +
+                           |        |          |         |       | andrey=CTc/andrey
+ template1                 | andrey | UTF8     | C       | C     | =c/andrey        +
+                           |        |          |         |       | andrey=CTc/andrey
+ test                      | andrey | UTF8     | C       | C     | 
+ ```
+ 
+ - Once this is done, you need to add at least one user who has permission to access 
+ - the database (aside from the super users, who can access everything)
+
+Commands:
+
+- <code>\list</code> lists all the databases in Postgres
+- <code>\connect</code> connect to a database
+- <code>\dt</code> list the tables in the currently connected database
+
+```
+postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
+postgres=> \list 
+postgres=> \connect super_awesome_application 
+postgres=> \dt 
+postgres=> \q
+```
 
 
 #### Common Commands
