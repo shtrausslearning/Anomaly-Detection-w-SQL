@@ -123,7 +123,7 @@ postgres=> \dt
 
 ### 2 | Upload CSV data to TABLES
 
-- Having created a non-super user, we can upload data to the <code>database</code>
+- Having created a non-superuser, we can upload data to the <code>database</code>
 
 #### Via postgreSQL
 
