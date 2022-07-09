@@ -4,7 +4,7 @@
 
 #### Start Server
 
-```python
+```
 pg_ctl -D /usr/local/var/postgres start # start server 
 # pg_ctl -D /usr/local/var/postgres stop  # end server
 ```
@@ -65,9 +65,9 @@ postgres=# \du
 ```
 psql postgres -U ben
 ```
- 
- - Once this is done, you need to add at least one user who has permission to access 
- - the database (aside from the super users, who can access everything)
+
+- Once this is done, you need to add at least one user who has permission to access 
+- the database (aside from the super users, who can access everything)
 
 Commands:
 
@@ -105,7 +105,7 @@ postgres=> \connect super_awesome_application
 You are now connected to database "super_awesome_application" as user "ben".
 ```
 
-``
+```
 postgres=> \dt 
 postgres=> \q
 ```
