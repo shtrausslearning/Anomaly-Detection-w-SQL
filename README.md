@@ -60,7 +60,7 @@ postgres=# \du
 ```
 
 - Let's connect to the database through user <code>ben</code>
-- # has changed to a > (no longer using a Super User account)
+- has changed to a > (no longer using a Super User account)
 
 ```
 psql postgres -U ben
