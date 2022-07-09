@@ -61,6 +61,12 @@ postgres=# \du
  ben       | Create DB                                                  | {}
 ```
 
+- Quit current session in terminal, server keeps on running
+
+```
+postgres=> \q
+```
+
 - Let's connect to the database through user <code>ben</code>
 - has changed to a > (no longer using a Super User account)
 
@@ -107,9 +113,10 @@ postgres=> \connect super_awesome_application
 You are now connected to database "super_awesome_application" as user "ben".
 ```
 
+- When we have some <code>tables</code>, we can call <code>\dt</code>
+
 ```
 postgres=> \dt 
-postgres=> \q
 ```
 
 - Now we can create, read, update and delete data with the user <code>ben</code>
