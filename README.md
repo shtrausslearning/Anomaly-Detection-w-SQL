@@ -2,6 +2,8 @@
 
 ### Setup PostgreSQL
 
+- First we need to setup <code>PostgreSQL</code>
+
 #### Start Server
 
 ```
