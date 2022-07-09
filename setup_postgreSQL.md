@@ -125,8 +125,31 @@ postgres=> \dt
 
 - Having created a non-super user, we can upload data to the <code>database</code>
 
+#### Via postgreSQL
 
-- Utilising <code>psycopg2</code> (via python)
+- Being connected to our database <code>super_awesome_application=#</code>
+- Create <code>table</code> header
+
+```
+CREATE TABLE DETAILS(emp_id SERIAL,
+first_name   VARCHAR(50),
+last_name VARCHAR(50),
+dob DATE,
+city VARCHAR(40));
+```
+
+- Copy data to newly created table <code>details</code>
+
+```
+COPY details(emp_id,first_name,last_name,dob,city)
+FROM '/Users/andrey/Documents/data.txt' 
+DELIMITER ','
+CSV HEADER;
+```
+
+#### Utilising psycopg2
+
+- Utilising <code>psycopg2</code> (via python) may seem a little longer, but we can run it via a script
 
 ```python
 
@@ -173,6 +196,8 @@ conn.commit()
 conn.close()    
 
 ```
+
+- Confirm the data has been uploaded via 
 
 ```
 TABLE details;
