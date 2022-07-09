@@ -65,6 +65,8 @@ postgres=# \du
 postgres=> \q
 ```
 
+#### Connect to Database
+
 - Let's connect to the database through user <code>ben</code>
 - has changed to a > (no longer using a Super User account)
 
