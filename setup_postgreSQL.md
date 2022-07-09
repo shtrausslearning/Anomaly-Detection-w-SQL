@@ -129,6 +129,7 @@ postgres=> \dt
 
 - Being connected to our database <code>super_awesome_application=#</code>
 - Create <code>table</code> header
+- Created <code>TABLES</code> can only be removed by the owners
 
 ```
 CREATE TABLE DETAILS(emp_id SERIAL,
