@@ -214,6 +214,7 @@ TABLE details;
 #### TABLE OPERATIONS
 List databases <code>\list</code> & Connect to databse <code>\connect</code>
 - <code>\dt</code> - show tables 
+- <code>CREATE TABLE DETAILS((table formats))</code> create table header
 - <code>TABLE table_name</code> view table stored in database
 - <code>DROP table_name</code> remove table from database 
 
