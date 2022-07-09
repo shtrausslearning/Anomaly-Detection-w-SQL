@@ -31,6 +31,41 @@ postgres=# \du
 
 ```
 
+- By default, no password is set for the default superuser, let's change the password
+
+```
+postgres=# \password andrey
+```
+
+- Create a new user, <code>ben</code>, by default the list of roles, attributes will be empty
+
+```
+postgres=# CREATE ROLE ben WITH LOGIN PASSWORD 'password'; 
+postgres=# \du
+```
+
+```
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ andrey    | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ ben       |                                                            | {}
+ ```
+ 
+ - Let's allow the user <code>ben</code> to create databases, using <code>ALTER ROLE</code>
+
+```
+postgres=# ALTER ROLE ben CREATEDB; 
+postgres=# \du 
+```
+
+```
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ andrey    | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ ben       | Create DB                                                  | {}
+```
+
 
 
 #### Common Commands
