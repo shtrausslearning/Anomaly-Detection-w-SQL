@@ -65,6 +65,20 @@ postgres=# \du
 ```
 psql postgres -U ben
 ```
+ 
+ - Once this is done, you need to add at least one user who has permission to access 
+ - the database (aside from the super users, who can access everything)
+
+Commands:
+
+- <code>\list</code> lists all the databases in Postgres
+- <code>\connect</code> connect to a database
+- <code>\dt</code> list the tables in the currently connected database
+
+```
+postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
+postgres=> \list 
+```
 
 ```
                                   List of databases
@@ -80,26 +94,26 @@ psql postgres -U ben
                            |        |          |         |       | andrey=CTc/andrey
  test                      | andrey | UTF8     | C       | C     | 
  ```
- 
- - Once this is done, you need to add at least one user who has permission to access 
- - the database (aside from the super users, who can access everything)
 
-Commands:
-
-- <code>\list</code> lists all the databases in Postgres
-- <code>\connect</code> connect to a database
-- <code>\dt</code> list the tables in the currently connected database
+- Connect to a particular database <code>super_awesome_application</code>
 
 ```
-postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
-postgres=> \list 
 postgres=> \connect super_awesome_application 
+```
+
+```
+You are now connected to database "super_awesome_application" as user "ben".
+```
+
+``
 postgres=> \dt 
 postgres=> \q
 ```
 
+- Now we can create, read, update and delete data with the user <code>ben</code>
 
-#### Common Commands
+
+#### Common SQL Commands 
 
 ```
 SELECT - extracts data from a database
