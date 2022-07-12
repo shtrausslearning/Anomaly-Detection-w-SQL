@@ -36,7 +36,7 @@
 - <code>CHECK</code>
     - Ensures that all values in a column satisfy certain conditions   
 
-#### 8 | CREATE, DROP & USE DATABASE
+#### 3 | CREATE, DROP & USE DATABASE
 
 - Create, remove & use database (make active)
 
@@ -47,7 +47,7 @@ SHOW DATABASES;
 USE testDB1; 
 ```
 
-#### 9 | CREATE, DROP & USE TABLE
+#### 4 | CREATE, DROP & USE TABLE
 
 - Create table header, describe table & drop table
 
@@ -76,4 +76,68 @@ NAME	varchar(20)	NO		NULL
 AGE	int(11)	NO		NULL	
 ADDRESS	char(25)	YES		NULL	
 SALARY	decimal(18,2)	YES		NULL	
+```
+
+#### 4 | INSERT INTO 
+
+```sql
+CREATE TABLE CUSTOMERS(
+  ID   INT              NOT NULL,
+  NAME VARCHAR (20)     NOT NULL,
+  AGE  INT              NOT NULL,
+  ADDRESS  CHAR (25) ,
+  SALARY   DECIMAL (18, 2),  /* The (18,2) simply means that we can have 18 digits with 2 of them after decimal point*/
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (1, 'Mark', 32, 'Texas', 50000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (2, 'John', 25, 'NY', 65000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (3, 'Emily', 23, 'Ohio', 20000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (4, 'Bill', 25, 'Chicago', 75000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (5, 'Tom', 27, 'Washington', 35000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (6, 'Jane', 22, 'Texas', 45000.00 );
+```
+
+#### 5 | SELECT CLAUSE
+
+```sql
+CREATE TABLE CUSTOMERS(
+  ID   INT              NOT NULL,
+  NAME VARCHAR (20)     NOT NULL,
+  AGE  INT              NOT NULL,
+  ADDRESS  CHAR (25) ,
+  SALARY   DECIMAL (18, 2),  /* The (18,2) simply means that we can have 18 digits with 2 of them after decimal point*/
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (1, 'Mark', 32, 'Texas', 50000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (2, 'John', 25, 'NY', 65000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (3, 'Emily', 23, 'Ohio', 20000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (4, 'Bill', 25, 'Chicago', 75000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (5, 'Tom', 27, 'Washington', 35000.00 );
+
+INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES (6, 'Jane', 22, 'Texas', 45000.00 );
+
+SELECT ID, NAME, SALARY FROM CUSTOMERS;
 ```
