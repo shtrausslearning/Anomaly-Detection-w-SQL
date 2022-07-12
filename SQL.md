@@ -1,4 +1,4 @@
-#### 6 | SQL data types
+#### 1 | SQL data types
 
 - Exact, approximate & time data types in SQL
 
@@ -21,22 +21,24 @@
     - date	Stores a date like June 30, 1991	-
     - time	Stores a time like 12:30 P.M.	
 
-#### 7 | SQL Constraint 
+#### 2 | SQL Constraint 
 
-- NOT NULL
+- <code>NOT NULL</code>
     - Ensures that a column cannot have a NULL value
-- DEFAULT
+- <code>DEFAULT</code>
     - Provide a default value in a column when none is specified
-- UNIQUE 
+- <code>UNIQUE</code> 
     - Ensures that all values in a column are unique 
-- PRIMARY 
+- <code>PRIMARY</code>
     - A primary key is a field that uniquely identifies each row/record in a database table
-- FOREIGN 
+- <code>FOREIGN</code>
     - Uniquely identifies a row/record in any other database table. A foreign key is a key used to link two tables together
-- CHECK
+- <code>CHECK</code>
     - Ensures that all values in a column satisfy certain conditions   
 
 #### 8 | CREATE, DROP & USE DATABASE
+
+- Create, remove & use database (make active)
 
 ```sql
 CREATE DATABASE database;
@@ -46,6 +48,8 @@ USE testDB1;
 ```
 
 #### 9 | CREATE, DROP & USE TABLE
+
+- Create table header, describe table & drop table
 
 ```sql
 CREATE TABLE CUSTOMERS(
