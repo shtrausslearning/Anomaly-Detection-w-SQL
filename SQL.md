@@ -122,22 +122,12 @@ CREATE TABLE CUSTOMERS(
 );
 
 INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (1, 'Mark', 32, 'Texas', 50000.00 );
-
-INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (2, 'John', 25, 'NY', 65000.00 );
-
-INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (3, 'Emily', 23, 'Ohio', 20000.00 );
-
-INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (4, 'Bill', 25, 'Chicago', 75000.00 );
-
-INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (5, 'Tom', 27, 'Washington', 35000.00 );
-
-INSERT INTO CUSTOMERS (ID, NAME, AGE, ADDRESS, SALARY)
-VALUES (6, 'Jane', 22, 'Texas', 45000.00 );
+VALUES (1, 'Mark', 32, 'Texas', 50000.00 ),
+       (2, 'John', 25, 'NY', 65000.00 ),
+       (3, 'Emily', 23, 'Ohio', 20000.00 ),
+       (4, 'Bill', 25, 'Chicago', 75000.00 ),
+       (5, 'Tom', 27, 'Washington', 35000.00 ),
+       (6, 'Jane', 22, 'Texas', 45000.00 );
 
 SELECT ID, NAME, SALARY FROM CUSTOMERS;
 ```
