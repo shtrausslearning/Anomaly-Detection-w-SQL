@@ -141,3 +141,7 @@ VALUES (6, 'Jane', 22, 'Texas', 45000.00 );
 
 SELECT ID, NAME, SALARY FROM CUSTOMERS;
 ```
+
+#### 6 | Aggregate Functions in SQL
+
+- <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code>
