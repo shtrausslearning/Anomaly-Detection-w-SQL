@@ -134,6 +134,8 @@ SELECT ID, NAME, SALARY FROM CUSTOMERS;
 
 #### 6 | Aggregate Functions in SQL
 
+Used in conjunciton with the <code>SELECT</code> clause
+
 - <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code>
 
 ```sql
