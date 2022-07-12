@@ -1,26 +1,25 @@
 #### 6 | SQL data types
 
-Exact numerical data types
+- Exact, approximate & time data types in SQL
 
-- int	-2,147,483,648	2,147,483,647
-- bigint	-9,223,372,036,854,775,808	9,223,372,036,854,775,807
-- smallint	-32,768	32,767
-- tinyint	0	255
-- bit	0	1
-- decimal	-10^38 +1	10^38 -1
-- numeric	-10^38 +1	10^38 -1
+- Exact numerical data types
+    - int	-2,147,483,648	2,147,483,647
+    - bigint	-9,223,372,036,854,775,808	9,223,372,036,854,775,807
+    - smallint	-32,768	32,767
+    - tinyint	0	255
+    - bit	0	1
+    - decimal	-10^38 +1	10^38 -1
+    - numeric	-10^38 +1	10^38 -1
 
-Approximate numerical data types
+- Approximate numerical data types
+    - float	-1.79E + 30	1.79E + 308
+    - real	-3.40E + 38	3.40E + 38
 
-- float	-1.79E + 30	1.79E + 308
-- real	-3.40E + 38	3.40E + 38
-
-Date & Time
-
-- datetime	Jan 1, 1753	Dec 31, 9999
-- smalldatetime	Jan 1, 1900	Jun 6, 2079
-- date	Stores a date like June 30, 1991	-
-- time	Stores a time like 12:30 P.M.	
+- Date & Time
+    - datetime	Jan 1, 1753	Dec 31, 9999
+    - smalldatetime	Jan 1, 1900	Jun 6, 2079
+    - date	Stores a date like June 30, 1991	-
+    - time	Stores a time like 12:30 P.M.	
 
 #### 7 | SQL Constraint 
 
@@ -47,8 +46,6 @@ USE testDB1;
 ```
 
 #### 9 | CREATE, DROP & USE TABLE
-
-- General SQL operations
 
 ```sql
 CREATE TABLE CUSTOMERS(
