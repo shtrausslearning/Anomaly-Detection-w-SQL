@@ -3,10 +3,10 @@
 ### 1. Upload data to TABLE
 
 - Create a table <code>server_log_summary</code> header (contains 3 columns)
-   - <code>status</code>, <code>period</code> & <code>entries</code>
-- Then copy **table data** from file <code>data.csv</code> into table <code>server_log_summary</code>
+   - `status`, `period` & `entries`
+- Then copy **table data** from file <code>data.csv</code> into table `server_log_summary`
 - Finally, **sort the table** by column <code>period</code> 
-- Select top 10 entries (LIMIT -> postgreSQL)
+- Select top 10 entries (`LIMIT` -> postgreSQL)
 
 ```sql
 CREATE TABLE server_log_summary (
@@ -49,7 +49,7 @@ COPY 2892
 - To generate the axis, we can use two nice features of PostgreSQL:
    - `generate_series`: A **function that generates a range of values** ([md example](https://github.com/shtrausslearning/PostgreSQL-tutorials/blob/main/generate_series.md))
    - `data_trunc` : date truncator (1 min interavals, nothing more)
-   - `VALUES<` with `FROM` : A special clause that can generate “constant tables,” as the documentation calls it
+   - `VALUES` with `FROM` : A special clause that can generate "constant tables" [example](https://github.com/shtrausslearning/PostgreSQL-tutorials/blob/main/from%20values.md)
    - After generating the axis, we left to join the actual data to get a complete series for each status code
    - The resulting data has no gaps and is ready for analysis
 
