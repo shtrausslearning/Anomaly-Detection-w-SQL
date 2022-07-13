@@ -83,6 +83,7 @@ GROUP BY
 
 ### 3. Identifying anomalities
 
+- For each `status_code`, we calculate the last value, average & standard deviation
 - Find the <code>z-score</code> using data after **2020-08-01 17:00**
 
 ```sql
@@ -121,10 +122,15 @@ COPY 2892
          400 |         24 | 0.73333333333333333333 |     3.4388935285299212
 (4 rows)
 ```
+#### Calculate z-score of **last value** 
 
-- Next, we calculate the z-score for the last value for each status code:
-- We calculated the z-score by finding the number of standard deviations between the last value and the mean. 
-- To avoid a “division by zero” error, we transform the denominator to NULL
+- Next, we calculate the `z-score` for the last value for each status code:
+   - We calculated the z-score by finding the number of standard deviations between the last value and the mean. 
+   - To avoid a “division by zero” error, we transform the denominator to NULL
+
+```
+NULLIF(stddev_entries::float, 0)
+```
 
 ```sql
 WITH stats AS (
@@ -159,13 +165,17 @@ COPY 2892
 (4 rows)
 ```
 
-- Looking at the z-scores we got, we can spot that **status code 400** received a very high z-score of 6 
+- Looking at the `z-scores`:
+   - **status code 400** received a very high **z-score of 6** 
 - In the past minute, we returned a 400 status code 24 times, which is significantly higher than the average of 0.73 in the past hour
-- Looking at the raw data:
-
+- Looking at the **raw data**:
 
 ```sql
-SELECT * FROM server_log_summary WHERE status_code = 400 ORDER BY period DESC LIMIT 20;
+SELECT * 
+FROM server_log_summary 
+WHERE status_code = 400 
+ORDER BY period 
+DESC LIMIT 20;
 ```
 
 ```
