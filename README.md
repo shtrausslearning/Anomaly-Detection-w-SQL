@@ -1,3 +1,3 @@
 # Anomaly-Detection-w-SQL
 
-- analysing a service log.md
+- 1. analysing a service log.md
