@@ -1,16 +1,16 @@
 ## 1 | Finding past anomalities
 
-- In the previous section, we identified an anomaly. 
-- We found an increase in the 400 status code because the z-score was 6 
-- But how do we set the threshold for the z-score? 
-    - Is a z-score of 3 an anomaly? What about 2, or 1?
+#### Z-Score threshold & backtesting:
+- In the previous section, **we identified an anomaly** 
+    - We found an **increase in the 400 status** code because the `z-score` was **6** (which is high) 
+- But how do we set the **threshold** for the z-score? (Is a z-score of 3 an anomaly?)
 - To **find thresholds** that fit our needs,
-    -  We can run simulations on past data with different values and evaluate the results.
+    -  We can **run simulations on past data** with different values and evaluate the results
     -  **This is often called backtesting**
-- The first thing we need to do:
-    - calculate the <code>mean</code> and the <code>standard deviation</code> for each status code up until every row, 
-    - just as if it is the current value
-- This is a classic job for a window function <code>WINDOW</code>:
+
+#### We need to do:
+- calculate the <code>mean</code> and the <code>standard deviation</code> for each status code up until every row, 
+- just as if it is the current value; job for a window function `WINDOW`
 
 ```sql
 WITH calculations_over_window AS (
