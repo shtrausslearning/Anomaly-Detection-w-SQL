@@ -124,8 +124,9 @@ COPY 2892
 ```
 #### Calculate z-score of **last value** 
 
-- Next, we calculate the `z-score` for the last value for each status code:
-   - We calculated the z-score by finding the number of standard deviations between the last value and the mean. 
+- Next, we calculate the `z-score` for the **last value** for each status code:
+   - **period > '2020-08-01 17:00 UTC'::timestamptz** subset is used to calculate the `mean`, `std` 
+   - We calculated the `z-score` by finding the number of standard deviations between the last value and the mean. 
    - To avoid a “division by zero” error, we transform the denominator to NULL
 
 ```
@@ -165,9 +166,11 @@ COPY 2892
 (4 rows)
 ```
 
+Conclusions:
 - Looking at the `z-scores`:
    - **status code 400** received a very high **z-score of 6** 
-- In the past minute, we returned a 400 status code 24 times, which is significantly higher than the average of 0.73 in the past hour
+- In the past minute:
+   - we returned a 400 status code 24 times (significantly higher than the average of 0.73) in the past hour
 - Looking at the **raw data**:
 
 ```sql
