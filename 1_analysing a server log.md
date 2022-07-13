@@ -83,7 +83,7 @@ GROUP BY
 
 ### 3. Identifying anomalities
 
-What we need to do:
+#### What we need to do:
 - For each `status_code`:
    - we calculate the **last value (entries)**, **average (hour average)** & **standard deviation (hour average)**
    - Find the <code>z-score</code> using data after **2020-08-01 17:00** (last hour data)
@@ -168,7 +168,7 @@ COPY 2892
 (4 rows)
 ```
 
-Conclusions:
+#### Conclusions:
 - Looking at the `z-scores`:
    - **status code 400** received a very high **z-score of 6** 
 - In the past minute:
