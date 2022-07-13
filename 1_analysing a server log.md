@@ -47,12 +47,10 @@ COPY 2892
 
 - First, we should generate an axis using a cartesian join between the status codes we want to track and the times we want to monitor
 - To generate the axis, we can use two nice features of PostgreSQL:
-    - <code>generate_series</code>: A **function that generates a range of values** ([md example]()
-    - <code>VALUES</code> list: A special clause that can generate “constant tables,” as the documentation calls it
-- You might be familiar with the VALUES clause from INSERT statements
-- In the old days, to generate data, we had to use a bunch of SELECT … UNION ALL… Using VALUES is much nicer
-- After generating the axis, we left to join the actual data to get a complete series for each status code
-- The resulting data has no gaps and is ready for analysis
+   - <code>generate_series</code>: A **function that generates a range of values** ([md example](https://github.com/shtrausslearning/PostgreSQL-tutorials/blob/main/generate_series.md))
+   - <code>VALUES</code> list: A special clause that can generate “constant tables,” as the documentation calls it
+   - After generating the axis, we left to join the actual data to get a complete series for each status code
+   - The resulting data has no gaps and is ready for analysis
 
 ```sql
 -- Correct!
