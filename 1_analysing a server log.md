@@ -54,7 +54,6 @@ COPY 2892
    - The resulting data has no gaps and is ready for analysis
 
 ```sql
--- Correct!
 WITH axis AS (
    SELECT
        status_code,
