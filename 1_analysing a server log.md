@@ -83,7 +83,7 @@ GROUP BY
 
 ### 3. Identifying anomalities
 
-- For each `status_code`, we calculate the last value, average & standard deviation
+- For each `status_code`, we calculate the last value (entries), average (hour average) & standard deviation (hour average)
 - Find the <code>z-score</code> using data after **2020-08-01 17:00** (last hour data)
 
 ```sql
